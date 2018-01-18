@@ -1,0 +1,73 @@
+<html>
+
+<head>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" ></script>
+	
+	<style type="text/css" >
+	
+		body { background: #f8f8f0; }		
+		input.cell { width:100px; padding:5px; }
+		#spreadsheet { margin-left:200px; margin-right:200px; border:1px solid #888888; overflow:scroll; }
+		#fxbar { margin-left:250px; margin-right:250px; padding: 15px; }
+		input#fx { -webkit-border-radius:5px; width:100%; border:1px solid #eee; padding:5px;}
+		input#fx:hover { border:1px solid #cccccc; }
+		input#fx:focus {outline: 0px solid #000000; outline-offset:0px; border:1px solid #888888; }
+	
+	</style>
+	
+</head>
+
+<body>
+
+<div id="fxbar" >
+
+<input id="cellcode" /><input id="fx" onkeydown = 'fx(this.value);' />
+
+</div>
+
+<div id="spreadsheet" >
+
+</div>
+
+	<script type="text/javascript"  >
+
+		var table = "<table>";
+		var data = [];
+
+		for (var i=0; i<19; i++) {
+		
+			data.push([]);
+		
+			var row = "<tr id='row:" + i + "' >";
+		
+			for (var j=0; j<12; j++) {
+			
+				data[i].push("");
+			
+				row += "<td id='cell:" + i + "." + j + "' >\
+					<input type='text' class='cell' onfocus='document.getElementById(\"cellcode\").value = this.row+\"\"+this.col; ' onchange='data[this.row][this.column]=this.value' row='"+i+"' col='"+j+"' id='cd:"+i+"."+j+"' /></td>";
+			}
+			
+			row += "</tr>";
+			
+			table += row;
+		
+		}
+		
+		table += "</table>";
+		
+		$("#spreadsheet").html(table);
+		
+		function fx (fxinput) {
+		
+			
+		
+		}
+					
+	</script>
+	
+
+</body>
+
+</html>

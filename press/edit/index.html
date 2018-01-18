@@ -1,0 +1,542 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8/" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="author" content="Jacob Brazeal" />
+	<meta name="description" content="Enriching Musical Entertainment, from GoldSpike Audio" />
+	<meta name="keywords" content="enriching musical entertainment, homeschooling, cd, creation vs evolution, julius caesar" />
+
+	<title>GoldSpike Audio</title>
+	<link rel="stylesheet" type="text/css" href="../../global.css" />
+	<!--[IF IE 7] <link rel="stylesheet" type="text/css" href="../../ie7.css" /> -->
+	<!--[IF lte IE 6] <link rel="stylesheet" type="text/css" href="../../ie6.css" /> -->
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" ></script>
+	<script type="text/javascript" src="../../popup.js" ></script>
+	<script type="text/javascript" src="../../global.js" ></script>
+	<script type="text/javascript" >
+	
+	
+		var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-12280229-2']);
+  		_gaq.push(['_trackPageview']);
+
+  		(function() {
+  	 	 	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+
+	</script>
+	<script type="text/javascript" >
+	
+			var init,populate,aid,preview,save,deletefile,strip,open;
+			
+			var dirty = false;
+	
+	</script>
+
+	
+</head>
+
+<body >
+
+<div >
+
+	<div id="header" >
+
+	</div> <!--- /header -->
+	
+	<fieldset id="content" >
+	
+		<div id="side1" style="width:20%;padding:0px;margin:0px;float:left;" >
+		
+		<div style="padding-top:15px;" >
+		
+			<form id="pn" action="" onsubmit = " init ( this.aid.value ); return false; ">
+				
+				<input type="hidden" id="spn" name="aid" />
+				
+				<div class="tabs vl" style="max-height:500px; overflow-x:scroll;" >
+				
+				<a class="button" href="http://goldspikeaudio.com/press/edit.php?action=create&redir=yes" >New Article ...</a>
+					
+					<div class="tab-top" id="opn" ><div class="spinner" ></div></div>			
+				
+				</div>
+			</form>
+						
+			<br/>
+			
+			<div id="options" >
+	
+				<button onclick="save(aid);" >Save</button>				
+				<button onclick = 'window.open("http://goldspikeaudio.com/press/article.html?aid=" + aid);' >View</button>
+				<button onclick = "deletefile(aid);" >Delete File</button>
+			
+			</div>
+			
+		</div>
+		
+		</div>
+	
+		<div id="side2" style="width:80%;padding:0px;margin:0px;float:left;" >
+		
+		<div style="padding:15px;" >
+					
+				<form class="art" id="art" >
+										
+			<br/>
+			
+			<div class="tabs hl" >
+			
+			<div class="tab-top" >
+			
+			<br/>
+			
+				<div style="width:400px; margin:auto; position:relative; top:-20px;" >
+					<label class="tab-1 tab open first" >Edit Article</label>
+					<label class="tab-2 tab off" onclick="preview();" >Preview Article</label>
+					<label class="tab-3 tab off last" >Options</label>
+				</div>
+				
+			</div>
+			
+			<div class="line default-width" ></div>
+			
+			<br/><br/>
+			
+			<div class="tab-content" style="border:0px solid #000000" >
+			
+			<div class="tab-1 tb" >
+			
+				<label for="title" >Title</label><br/>
+				<input id="title" />
+				
+				<br/><br/>
+				
+				<a href="javascript:help('meta-more');" >Show More Fields...</a>
+				
+				<br/><br/>
+				
+				<div id="meta-more" style="display:none;" >
+				
+					<label for="subtitle" >Subtitle</label><br/>
+					<input id="subtitle" /><br/><br/>
+					<label for="author" >Author</label><br/>
+					<input id="author" /><br/><br/>
+					<label for="date" >Release Date</label><br/>
+					<input id="date" /><br/><br/>
+
+				
+				</div>
+
+												
+				<label for="article" >
+				Article
+					<small><a href="javascript:help('article-help');" >(Help)</a></small>
+				</label><br/>
+				
+				<div class="sg hidden" style="display:none;width:80%" id="article-help" >
+				Use HTML tags &lt;b&gt; and &lt;/b&gt;for bold text and &lt;em&gt; and &lt;/em&gt; for
+				italic text. To make a link, copy and paste the following code into your
+				insertion point (with appropriate substitutions): &lt;a href="http://website.com/" &gt;link text&lt;/a&gt;.
+				For an image, use this code: &lt;img src="http://website.com/" width="WIDTH" height="HEIGHT" /&gt;.
+				<a href="http://w3schools.com/html" >More about HTML</a>
+				</div>
+				<textarea id="body" style="overflow-y:scroll; overflow-x:hidden;" ></textarea>
+				
+			</form>
+			
+			</div>
+
+			<div class="tab-2 tb" >
+			
+			<form class="art" >
+						
+				<h1 id="documentTitle" ></h1>
+				
+				<em><h2 id="documentSubTitle" ></h2></em>
+				
+				<span id="documentAuthor" ></span>
+				
+				<span id="documentDate" ></span>
+				
+				<p><hr /></p>
+				
+				<div id="documentBody" >
+									
+				</div>
+								
+			</form>
+						
+			</div>
+
+			<div class="tab-3 tb" >
+			
+			<form class="ops" >
+						
+				Options
+				
+				<p>Display (visible articles are shown on home page):
+					<select id="mode" >
+						<option value="live" >Visible</option>
+						<option value="hide" >Invisible</option>
+					</select>
+				</p>
+				
+			</form>
+						
+			</div>
+			
+			</div>
+			
+			</div>
+			
+			</div>
+						
+		</div>
+	
+	</fieldset> <!--- /content -->
+		
+</div> <!-- /wrap -->
+
+<div class="modal-dialog-bg" >
+		
+		<div class="modal-dialog-box" id="mailinglist" >
+		<div class="top" >Mailing List Sign Up<span class="float-right hide" ><a href="" >X</a></span></div>
+			
+		<form action="http://goldspikeaudio.com/m/j.php" >
+			
+				<fieldset >
+					<input type="text" placeholder="Email Address" name="utm_e" id="utm_e" class="inset modal" />
+					<br/>
+					<input type="text" placeholder="Name" name="utm_n" id="utm_n" class="inset modal" />
+				</fieldset>
+				<br/>
+				<button type="submit" >JOIN</button>
+		</form>
+			<p class="sg" >
+				Copyright &copy; 2011 GoldSpike Audio. <a href="http://goldspikeaudio.com/privacy" target="_blank" >Privacy &rsaquo;</a>
+			</p>
+		</div>
+
+	
+	</div>
+
+</div>
+	<script type="text/javascript" >
+		
+		$(document).ready(function(){
+				
+		aid = u("aid");
+				
+		// populate select 
+		
+		populate = function(m) {
+						
+		if(aid=="") aid=1000; //default id
+			
+			var u=m;
+			u = unescape(unescape(unescape(u)));
+			u = u.split("<::>");
+			var s='', open;
+			for(var i=0; i<u.length; i++) {
+				var idc = u[i].split("<==>")[1];
+				if (idc == aid) {open = "open"; $("title").html("Editing "+u[i].split("<==>")[0])+" | GoldSpike Audio";}
+				else open = "";
+				s+="<label class='tab tab-1 "+open+" pad' onclick='init("+idc+");' >"+u[i].split("<==>")[0]+"</label>";
+			}
+			
+			$("#opn").html(s);
+			var xmlhttp;
+			if (window.XMLHttpRequest)
+			{
+ 				xmlhttp=new XMLHttpRequest();
+  			}
+  			else
+  			{
+  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+			xmlhttp.onreadystatechange=function()
+ 			{
+  				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+  					var j = xmlhttp.responseText;
+  					j = unescape(j);
+  					j = j.split(",,,,");
+  					var b = j[4];
+					var lb = b.split("<br/>");
+					var lbl = lb.length;
+					var ebd = lb[0];
+					for(var i=1; i<lbl;  i++) ebd += "\n" + lb[i];
+					j[4] = ebd;
+					
+  					$("#title").val(j[0]);
+  					$("#subtitle").val(j[1]);
+  					$("#author").val(j[2]);
+  					$("#date").val(j[3]);  	  					
+  					$("#body").val(j[4]);
+  					$("#mode").val(j[5]);
+
+  					preview();
+  				}
+  			}
+  			
+  			xmlhttp.open("GET","http://goldspikeaudio.com/press/dop.php?field=title,,,,subtitle,,,,author,,,,date,,,,body,,,,display&delim=,,,,&aid="+aid,true);
+			xmlhttp.send();	
+
+		
+		}
+		
+		init = function (id) {
+		
+			var cont;
+					
+			if ( dirty == true) cont = confirm ("You have made unsaved changes. Press OK to continue anyway.");
+
+			if (cont == "OK" || cont == true) dirty=false;		
+						
+			if (dirty == false) {
+		
+			if (id != undefined) aid = id;		
+			var xmlhttp;
+			if (window.XMLHttpRequest)
+			{
+ 				xmlhttp=new XMLHttpRequest();
+  			}
+  			else
+  			{
+  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+			xmlhttp.onreadystatechange=function()
+ 			{
+  				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+  					var m = xmlhttp.responseText;
+  					populate(m);
+  				}
+  			}
+  			
+  			xmlhttp.open("GET","http://goldspikeaudio.com/press/edit.php?action=listnames&delim=<::>",true);
+			xmlhttp.send();	
+			
+			}
+			
+			
+			}
+			
+			
+		function d(dl,dt,t) {
+
+
+			var xmlhttp;
+			if (window.XMLHttpRequest)
+			{
+ 				xmlhttp=new XMLHttpRequest();
+  			}
+  			else
+  			{
+  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+			xmlhttp.onreadystatechange=function()
+ 			{
+  				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+  					var m = xmlhttp.responseText;
+  					if (t == "value") $(dl).attr("value", m);
+  					if (t == "html") $(dl).html(m);
+  				}
+  			}
+  			
+  			xmlhttp.open("GET","http://goldspikeaudio.com/press/dop.php?aid="+aid+"&field="+dt+"&delim=,",true);
+			xmlhttp.send();			
+
+}
+
+
+	preview=function(){
+	
+					$("#documentTitle").html($("#title").attr("value"));
+					$("#documentSubTitle").html($("#subtitle").attr("value"));
+					$("#documentAuthor").html($("#author").attr("value"));
+					$("#documentDate").html($("#date").attr("value"));
+					$("#documentBody").html(strip(1, $("#body").attr("value")));
+	
+	}
+		
+	save = function(idc){
+	
+		var data=strip(0)+",,,,"+document.getElementById("mode").value;
+		
+		var xmlhttp;
+			if (window.XMLHttpRequest)
+			{
+ 				xmlhttp=new XMLHttpRequest();
+  			}
+  			else
+  			{
+  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+			xmlhttp.onreadystatechange=function()
+ 			{
+  				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+  					var m = xmlhttp.responseText;
+  					dirty=false;
+  					init(aid);
+
+  				}
+  			}
+  			
+  			xmlhttp.open("GET","http://goldspikeaudio.com/press/edit.php?action=save&aid="+idc+"&delim=,,,,&data="+data,true);
+			xmlhttp.send();			
+
+
+	
+	}
+	
+	deletefile = function(id){
+	
+		if (confirm("Are you sure you want to delete '" + $("#title").val() + "'?")) {
+						
+		var xmlhttp;
+			if (window.XMLHttpRequest)
+			{
+ 				xmlhttp=new XMLHttpRequest();
+  			}
+  			else
+  			{
+  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+			xmlhttp.onreadystatechange=function()
+ 			{
+  				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+  					var m = xmlhttp.responseText;
+  					init (m);
+  					dirty=false;
+  				}
+  			}
+  			
+  			xmlhttp.open("GET","http://goldspikeaudio.com/press/edit.php?delim=,&action=delete&aid="+id,true);
+			xmlhttp.send();			
+			
+			}			
+	}
+	
+	strip= function(d) {
+	
+		if (d===0) {	
+		
+		var bd = $("#body").val();
+		var lb = bd.split("\n");
+		var lbl = lb.length;
+		var ebd = lb[0];
+		for(var i=1; i<lbl;  i++) ebd += "<br/>" + lb[i];
+		
+		lb = ebd.split("<==>");
+		lbl = lb.length;
+		ebd = lb[0];
+		for(var i=1; i<lbl;  i++) ebd += "<=>" + lb[i];
+
+		lb = ebd.split("<::>");
+		lbl = lb.length;
+		ebd = lb[0];
+		for(var i=1; i<lbl;  i++) ebd += "<:>" + lb[i];
+		
+		var sb = $("#subtitle").val();
+		var lsb = sb.split("<==>")
+		var lsbl = lsb.length;
+		var esb = lsb[0];
+		for(var i=1; i<lsbl;  i++) esb += "<=>" + lsb[i];
+
+		lsb = esb.split("<::>")
+		lsbl = lsb.length;
+		esb = lsb[0];
+		for(var i=1; i<lsbl;  i++) esb += "<:>" + lsb[i];
+
+		var auth = $("#author").val();
+		var lauth = auth.split("<==>")
+		var lauthl = lauth.length;
+		var eauth = lauth[0];
+		for(var i=1; i<lauthl;  i++) eauth += "<=>" + lauth[i];
+
+		lauth = eauth.split("<::>")
+		lauthl = lauth.length;
+		eauth = lauth[0];
+		for(var i=1; i<lauthl;  i++) eauth += "<:>" + lauth[i];
+
+		var date = $("#date").val();
+		var ldate = date.split("<==>")
+		var ldatel = ldate.length;
+		var edate = ldate[0];
+		for(var i=1; i<ldatel;  i++) edate += "<=>" + ldate[i];
+
+		ldate = edate.split("<::>")
+		ldatel = ldate.length;
+		edate = ldate[0];
+		for(var i=1; i<ldatel;  i++) edate += "<:>" + ldate[i];
+
+		var tit = $("#title").val();
+		var ltit = tit.split("<==>")
+		var ltitl = ltit.length;
+		var etit = ltit[0];
+		for(var i=1; i<ltitl;  i++) etit += "<=>" + ltit[i];
+
+		ltit = etit.split("<::>")
+		ltitl = ltit.length;
+		etit = ltit[0];
+		for(var i=1; i<ltitl;  i++) etit += "<:>" + ltit[i];
+				
+		var data = etit + ",,,," + esb + ",,,," + eauth + ",,,," + edate + ",,,," + ebd;
+		
+		return data;
+		
+		}
+		
+		else {
+		
+		var bd = $("#body").val();
+		var lb = bd.split("\n");
+		var lbl = lb.length;
+		var ebd = lb[0];
+		for(var i=1; i<lbl;  i++) ebd += "<br/>" + lb[i];
+		
+		lb = ebd.split("<==>");
+		lbl = lb.length;
+		ebd = lb[0];
+		for(var i=1; i<lbl;  i++) ebd += "<=>" + lb[i];
+
+		lb = ebd.split("<::>");
+		lbl = lb.length;
+		ebd = lb[0];
+		for(var i=1; i<lbl;  i++) ebd += "<:>" + lb[i];
+		
+		return ebd;
+		
+		}
+	
+	}
+	
+	$(".art input[type!=hidden], .art textarea").keypress(function(){
+	
+		dirty=true;
+	
+	
+	});
+	
+				init(aid);
+
+		
+});		
+
+function create() {
+	
+		window.location = "http://goldspikeaudio.com/press/edit.php?action=create&redir=yes";
+	
+}
+			
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<script type="text/javascript" >
+		
+			function us(){
+		
+				var vars = [], hash;
+  				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+  				for(var i = 0; i < hashes.length; i++) {
+		    	  hash = hashes[i].split('=');
+		      		vars.push(hash[0]);
+	    	 		vars[hash[0]] = hash[1];
+	    		}
+	    		
+	    		return vars;
+	  		}
+
+			function u(name){
+			
+				if (!us()[name]) return '';
+				else return decodeURI(unescape(us()[name]));
+			}
+			
+			var padd = ['http://kunaki.com/accounting/sales.asp?PID=PX008ND7G7', 'http://kunaki.com/accounting/sales.asp?PID=PX00DJ06L0'];
+			
+			window.location = padd[u(pid)+1];
+		
+		</script>
+	</head>
+	<body>
+		<noscript>
+			<h1>This page requires JavaScript.</h1>
+			For enhanced functionality, please turn on JavaScript. You can purchase the item of your choice below:
+			<br/><br/>
+			<ul>
+				<li>
+					<strong>Julius Caesar Remixed:</strong>
+					<a href="http://kunaki.com/accounting/sales.asp?PID=PX008ND7G7" >Purchase &rsaquo;</a>
+				</li>
+				<li>
+					<strong>Creation vs. Evolution: the West of the Story:</strong>
+					<a href="http://kunaki.com/accounting/sales.asp?PID=PX00DJ06L0" >Purchase &rsaquo;</a>
+				</li>
+			</ul>			
+		</noscript>
+	</body>
+</html>

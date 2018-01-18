@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>Addition Algorithm</title>
+	<script type="text/javascript" >
+		
+		
+		var u;
+
+		var	a=prompt('Num1');
+		var b=prompt('Num2');
+		add(a,b);
+		
+		function add(a, b)
+		{
+		
+			//Ensure input is valid and convert it to a number, then back to a string
+			
+			var valid=true;
+			a *= 1;
+			b *= 1;
+			if(!isNaN(b)) a += '';
+			else valid=false;
+			if(!isNaN(b)) b += '';
+			else valid=false;
+			if (!valid) alert('Invalid input.');
+			
+			
+			//Continue
+			
+			else
+			{
+				//Vars
+				
+				var num=[a,b],intPart=[[],[]],fracPart=[[],[]],sign=[];
+								
+				//Start iterating through each number to assign it to its arrays
+				
+				for (var k=0; k<num.length; k++)
+				{
+				
+					//Get the position of the period
+					
+					var ploc = num[k].indexOf('.');
+					if(ploc==-1) ploc = num[k].length+1;
+									
+					//Iterate through the integer part (returned in REVERSE ORDER to mimic place-value)
+					
+					for (var i=0; i<ploc; i++) 
+					{
+						intPart[k][i]=num[k].charAt(ploc-i-1);
+						intPart[k][i] *= 1;
+
+					}
+					
+					//Now iterate through the decimal part (if it doesn't exist, the iteration goes 0 times)
+					
+					for (var i=0; i<(num[k].length-ploc); i++) 
+					{
+						fracPart[k][i]=num[k].charAt(i+ploc+1);
+						fracPart[k][i] *= 1;
+
+					}
+				}
+				
+				alert(fracPart[0][0]+intPart[0][0]);
+								
+			}
+		}	
+		
+		function power(base, exponent)
+		{
+			if (isNaN(exponent) || isNaN(base)) return false;
+			else
+			{
+				exponent = Math.floor(exponent);
+				for (var i=0; i<exponent; i++) base *= base;
+				return base;
+			}
+		}
+		
+	</script>
+</head>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8/" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="author" content="Jacob Brazeal" />
+	<meta name="description" content="Enriching Musical Entertainment, from GoldSpike Audio" />
+	<meta name="keywords" content="enriching musical entertainment, homeschooling, cd, creation vs evolution, julius caesar" />
+
+	<title>Quiz Statistics | GoldSpike Audio</title>
+	<link rel="stylesheet" type="text/css" href="../../global.css" />
+	<!--[IF IE 7] <link rel="stylesheet" type="text/css" href="../../ie7.css" /> -->
+	<!--[IF lte IE 6] <link rel="stylesheet" type="text/css" href="../../ie6.css" /> -->
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" ></script>
+	<script type="text/javascript" src="../../popup.js" ></script>
+	<script type="text/javascript" src="../../global.js" ></script>
+	<script type="text/javascript" >
+	
+	
+		var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-12280229-2']);
+  		_gaq.push(['_trackPageview']);
+
+  		(function() {
+  	 	 	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+
+	</script>
+
+	
+</head>
+
+<body>
+
+<div id="wrapper" >
+
+	<div id="header" >
+	
+		<div id="logo-wrap" >
+		
+			<h1><img src="http://www.goldspikeaudio.com/logo.jpg" alt="Creation vs. Evolution: the West of the Story, by GoldSpike Audio" /></h1>
+						
+		</div><!-- /logowrap -->
+				
+		<div id="nav" >
+		
+			<ul>
+			
+				<li><a href="http://goldspikeaudio.com/" >Home</a></li>
+				<li>
+					<a href="http://goldspikeaudio.com/products" >Products</a>
+				
+					<div>			
+								<ul>
+									<li><a href="http://goldspikeaudio.com/juliuscaesar" >Julius Caesar Remixed</a></li>
+									<li><a href="http://goldspikeaudio.com/creation" >Creation vs. Evolution: the West of the Story</a></li>
+									<li><a href="http://goldspikeaudio.com/products" >More &rsaquo;</a></li>
+								</ul>
+					</div>
+				
+				</li>
+				<li>
+					<a href="http://goldspikeaudio.com/reviews" >Reviews</a>				</li>
+				<li>
+					<a href="http://goldspikeaudio.com/free" >Free Stuff</a>
+					
+					<div>
+								<ul>
+									<li><a href="http://goldspikeaudio.com/clips?tag=product" >Product Clips</a></li>
+									<li><a href="http://goldspikeaudio.com/clips?tag=standalone" >Educational Shorts</a></li>
+									<li><a href="http://goldspikeaudio.com/bonus" >Bonus Content for CD Owners</a></li>
+									<li><a href="http://goldspikeaudio.com/quizzes" ><span class="red" >new!</span> Educational Quizzes</a></li>
+									<li><a href="http://goldspikeaudio.com/signup" >Get on our Mailing List</a></li>
+								</ul>
+					</div>
+				</li>
+				<li>
+					<a href="http://goldspikeaudio.com/about" >Our Company</a>
+					
+					<div>
+								<ul>
+									<li><a href="http://goldspikeaudio.com/about" >About Us</a></li>
+									<li><a href="http://goldspikeaudio.com/press" >Pressroom</a></li>
+									<li><a href="http://goldspikeaudio.com/blog" >Our Blog</a></li>
+									<li><a href="http://goldspikeaudio.com/contact" >Contact Us</a></li>
+								</ul>
+					</div>
+				</li>			
+			</ul>
+		
+		</div> <!-- /nav -->
+	
+	</div> <!--- /header -->
+	
+	<div id="content" >
+	
+		<div id="innerwrap" >
+			
+			<h1>Quiz Statistics</h1>
+			
+				<form action="" id="form" >
+					Stats for quiz:
+					<select id="pid" name="pid" onchange="document.getElementById('form').submit()" >
+						<option value="1" >Julius Caesar Quiz</option>
+						<option value="2" >Creation vs. Evolution Quiz</option>
+					</select>
+				</form>
+			
+			<br/><a href="#" onclick="takeQuiz()" >Take this Quiz</a> | <a href="#" onclick="clearStats()" >Clear Stats</a><br/><hr/>
+			
+			<div id="stats" ></div>
+												
+		</div> <!-- /innerwrap -->
+	
+	</div> <!--- /content -->
+	
+	<div id="footer" >
+	
+		<ul>
+			<li>
+				<h2>Company</h2>
+				<ul>
+					<li><a href="../about" >About Us</a></li>
+					<li><a href="../press" >Pressroom</a></li>
+					<li><a href="../blog" >Our Blog</a></li>
+					<li><a href="../contact" >Contact Us</a></li>
+				</ul>
+			</li>
+			<li>
+				<h2>Products</h2>
+				<ul>
+					<li><a href="../../juliuscaesar" >Julius Caesar Remixed</a></li>
+					<li><a href="../../creation" >Creation vs Evolution</a></li>
+					<li><a href="../../products" >Complete Catalog &rsaquo;</a></li>
+				</ul>
+			</li>
+			<li>
+				<h2>Free Stuff</h2>
+				<ul>
+					<li><a href="../../clips?tag=product" >Product Clips</a></li>
+					<li><a href="../../clips?tag=standalone" >Educational Shorts</a></li>
+					<li><a href="../../bonus" >Bonus Content for CD Owners</a></li>
+					<li><a href="../../quizzes" ><span class="red" >new!</span> Educational Quizzes</a></li>
+					<li><a href="#!/dialog/mailinglist" >Get on our Mailing List</a></li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	
+	</div> <!--- /footer -->
+	
+</div> <!-- /wrap -->
+
+<div class="modal-dialog-bg" >
+
+		<div class="modal-dialog-box" id="mailinglist" >
+		<div class="top" >Mailing List Sign Up<span class="float-right hide" ><a href="" >X</a></span></div>
+			
+		<form action="http://goldspikeaudio.com/m/j.php" >
+			
+				<fieldset >
+					<input type="text" placeholder="Email Address" name="utm_e" id="utm_e" class="inset modal" />
+					<br/>
+					<input type="text" placeholder="Name" name="utm_n" id="utm_n" class="inset modal" />
+				</fieldset>
+				<br/>
+				<button type="submit" >JOIN</button>
+		</form>
+			<p class="sg" >
+				Copyright &copy; 2011 GoldSpike Audio. <a href="http://goldspikeaudio.com/privacy" target="_blank" >Privacy &rsaquo;</a>
+			</p>
+		</div>
+
+	
+	</div>
+
+</div>
+
+<script type="text/javascript" >
+
+var q=0,z,ajax,Lc,Lb,rt=0,wg=0,S,Aky=[],Qky=[],qlen=0,check_scores,get_stats, get_grade, get_col, ptz, db=-1, foo, os;
+
+var pid = u('pid');
+
+if(pid=="") pid = 1;
+
+document.getElementById("pid").value = pid;
+
+var foo, os, S;
+
+			if (window.XMLHttpRequest)
+			{
+ 				foo=new XMLHttpRequest();
+  			}
+  			else
+  			{
+  				foo=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+			foo.onreadystatechange=function()
+ 			{
+  				if (foo.readyState==4 && foo.status==200) {
+  				
+  					os = foo.responseText;
+  					get_stats(S, os);
+  				
+  				}
+  			}
+  			
+  			foo.open("GET","http://goldspikeaudio.com/quizzes/load.php?pid="+pid);
+			foo.send();	
+  			
+			
+function get_stats (S, OS) {
+		
+	OS = OS.split("<==>");
+	var otz= Math.round(OS[0] / OS[1]* 200);
+	
+	var rV = "<br/><br/>";
+	rV += "<strong>Number of Times Taken:</strong> "+OS[2]+"<br/><br/><strong>Quiz Average Score</strong><br/><br/><table style='height:200px;' ><tr><td>Perfect</td><td rowspan='6' style='width:20px' ></td>\
+			<td rowspan='6' height='100' class='statsTable' >\
+			<div style='height:"+(200-otz)+"px; width:100%;' class='statsTableClear' ></div>\
+			<b style='color:white; display:block; width:100%; text-align:center;' >"+Math.round(otz/2)+"%</b></td>\
+			<td rowspan='6' style='width:200px; vertical-align:center; text-align:center;' >\
+			<div style='font-size:80pt; color: "+get_col(otz)+"' >"+get_grade(otz)+"</div>\
+			</td></tr><tr><td style='height:33px' ></td></tr>\
+			<tr><td style='height:33px' >Good</td></tr>\
+			<tr><td style='height:34px' ></td></tr>\
+			<tr><td style='height:33px' ></td></tr>\
+			<tr><td style='height:34px' ><a href='http://goldspikeaudio.com/go?pid="+pid+"' >Buy our CD</a></td></tr>\
+	</table>"
+	
+	
+	
+	document.getElementById('stats').innerHTML = rV;
+		
+}
+
+function get_grade ( ptz ) {
+
+	ptz = ptz/2;
+	if ( ptz < 60 ) ptz = "F";
+	else if ( ptz <= 63 ) ptz = "D-";
+	else if ( ptz <= 69 ) ptz = "D";
+	else if ( ptz <= 73 ) ptz = "C-";
+	else if ( ptz <= 77 ) ptz = "C";
+	else if ( ptz <= 79 ) ptz = "C+";
+	else if ( ptz <= 83 ) ptz = "B-";
+	else if ( ptz <= 87 ) ptz = "B";
+	else if ( ptz <= 89 ) ptz = "B+";
+	else if ( ptz <= 93 ) ptz = "A-";
+	else if ( ptz <= 97 ) ptz = "A";
+	else ptz = "A+";
+		
+	return ptz;
+	
+}
+
+function get_col (ptz) {
+
+	ptz = ptz/4 * 2.55 + 128;
+	
+	ptz = "rgb(0, " + Math.round(ptz) + ", 0)";
+	
+	return ptz;
+
+}
+
+function clearStats () {
+
+			if (window.XMLHttpRequest)
+			{
+ 				foo=new XMLHttpRequest();
+  			}
+  			else
+  			{
+  				foo=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+			foo.onreadystatechange=function()
+ 			{
+  				if (foo.readyState==4 && foo.status==200) {
+  				
+  					document.getElementById('form').submit();
+  				
+  				}
+  			}
+  			
+  			foo.open("GET","http://goldspikeaudio.com/quizzes/clear.php?pid="+pid);
+			foo.send();	
+
+
+}
+
+function getGeo () {
+
+			if (window.XMLHttpRequest)
+			{
+ 				foo=new XMLHttpRequest();
+  			}
+  			else
+  			{
+  				foo=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+			foo.onreadystatechange=function()
+ 			{
+  				if (foo.readyState==4 && foo.status==200) {
+  				
+  					var u = foo.responseText;
+  					u = u.split("<::>");
+  					
+  					for (var i=0; i<u.length; i++) {
+  					
+  						var k = u[i].split("<==>")
+  					
+  					}
+  				
+  				}
+  			}
+  			
+  			foo.open("GET","http://goldspikeaudio.com/quizzes/geo.php?pid="+pid);
+			foo.send();	
+
+
+}
+
+function takeQuiz () {
+
+	window.location = "http://goldspikeaudio.com/quizzes?pid="+pid;
+
+}
+
+
+
+</script>
+
+</body>
+</html>
